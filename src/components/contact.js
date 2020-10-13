@@ -7,14 +7,14 @@ function Contact(props) {
     <div className="Contact">
       <img
         className="avatar"
-        src={props.image}
+        src={props.avatar}
         alt={props.name}
       />
       <div>
         <h4 className="name">{props.name}</h4>
         <div className="status">
-          <span className={props.isConnected ? "status-online" : "status-offline"}></span>
-          <p className="status-text">{props.isConnected ? "online" : "offline"}</p>
+          <span className={props.online ? "status-online" : "status-offline"}></span>
+          <p className="status-text">{props.online ? "online" : "offline"}</p>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@ function Contact(props) {
 Contact.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
-    isConnected: PropTypes.bool.isRequired,
+    online: PropTypes.bool,
   };
 
 export default Contact;
